@@ -10,11 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    private var tapCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.titleLabel.text = String(self.tapCount)
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func onTouch(_ sender: Any) {
+        self.tapCount += 1
+        self.titleLabel.text = String(self.tapCount)
+    }
+    
 }
 
